@@ -1,0 +1,9 @@
+const calculateanswer = (email)=>
+{
+    const [localpart,domain]=email.split("@");
+    const [hostname, ...countrycodes]=domain.split(".");
+    return `${localpart.length}${hostname.length}${countrycodes.reduce((a,cc)=>a+cc.length,"")}`
+};
+
+
+console.log(calculateanswer("sakethnarayana333@gmail.com"))
